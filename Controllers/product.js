@@ -85,9 +85,10 @@ exports.updateProduct = (req, res) => {
             });
         }
 
+        //updation code
         let product = req.product;
-        product = _.extend()
         product = _.extend(product, fields);
+
         //handle file here
         if (file.photo) {
             if (file.photo.size > 3000000) {
@@ -98,19 +99,19 @@ exports.updateProduct = (req, res) => {
             product.photo.data = fs.readFileSync(file.photo.path);
             product.photo.contentType = file.photo.type;
         }
+        // console.log(product);
 
         //save to the DB
         product.save((err, product) => {
             if (err) {
-                return res.status(400).json({
-                    error: "Updation failed"
+                res.status(400).json({
+                    error: "Updation of product failed"
                 });
             }
             res.json(product);
         });
     });
-
-}
+};
 
 exports.deleteProduct = (req, res) => {
     const product = req.product;
