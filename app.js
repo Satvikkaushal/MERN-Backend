@@ -15,6 +15,9 @@ const categoryRoutes = require("./Routes/category");
 const productRoutes = require("./Routes/product");
 //order routes
 const orderRoutes = require("./Routes/order");
+//payment routes
+const paymentRoutes = require("./Routes/payment");
+
 
 
 //Db connection
@@ -38,8 +41,7 @@ app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
-
-
+app.use("/api", paymentRoutes);
 
 const port = 8000;
 app.listen(port, () => {
