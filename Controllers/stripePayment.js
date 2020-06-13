@@ -1,4 +1,4 @@
-const stripe = require("stripe")("sk_test_51GtAWeBbltFm7yj0jXQo2cSspyvvXCXQBJC5zVtAb6VYIgCMDufDJXihrCrJZOkeTvwzPyDqcZTF1RxlvqUNkVcT00YorWhT4x")
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const uuid = require("uuid/v4");
 exports.makepayment = (req, res) => {
     const { products, token } = req.body;
