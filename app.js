@@ -15,6 +15,9 @@ const categoryRoutes = require("./Routes/category");
 const productRoutes = require("./Routes/product");
 //order routes
 const orderRoutes = require("./Routes/order");
+//stripe route
+const stripeRoutes = require("./Routes/stripePayment");
+
 
 
 //Db connection
@@ -38,6 +41,10 @@ app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
+app.use("/api", stripeRoutes);
+
+
+
 
 
 
